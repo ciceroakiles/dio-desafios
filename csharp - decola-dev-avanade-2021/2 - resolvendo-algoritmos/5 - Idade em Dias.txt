@@ -1,0 +1,46 @@
+/*
+Desafio
+Você terá o desafio de ler um valor inteiro correspondente à idade de uma pessoa em dias e informe-a em anos, meses e dias
+
+Obs.: apenas para facilitar o cálculo, considere todo ano com 365 dias e todo mês com 30 dias. Nos casos de teste nunca haverá uma situação que permite 12 meses e alguns dias, como 360, 363 ou 364. 
+
+Entrada
+O arquivo de entrada contém um valor inteiro.
+
+Saída
+Imprima a saída conforme exemplo fornecido.
+
+ 
+Exemplos de Entrada
+400
+
+800
+
+30
+
+Exemplos de Saída
+1 ano(s)
+1 mes(es)
+5 dia(s)
+
+2 ano(s)
+2 mes(es)
+10 dia(s)
+
+0 ano(s)
+1 mes(es)
+0 dia(s)
+*/
+
+using System;
+
+class MinhaClasse {
+  public static void Main (string[] args) {
+    var idadeEmDias = int.Parse(Console.ReadLine());
+    var anos = idadeEmDias / 365; // Implemente aqui o calculo dos anos
+    var meses = (idadeEmDias % 365) / 30; // Implemente aqui o calculo dos meses 
+    var dias = (idadeEmDias % 365) % 30; // Implemente aqui o calculo dos dias
+
+    Console.WriteLine($"{anos} ano(s)\n{meses} mes(es)\n{dias} dia(s)");
+  }
+}
