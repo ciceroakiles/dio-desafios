@@ -1,0 +1,51 @@
+/*
+Desafio
+Leia a hora inicial, minuto inicial, hora final e minuto final de um jogo. A seguir calcule a duração do jogo.
+
+Obs: O jogo tem duração mínima de um (1) minuto e duração máxima de 24 horas.
+
+Entrada
+Quatro números inteiros representando a hora de início e fim do jogo.
+
+Saída
+Mostre a seguinte mensagem: “O JOGO DUROU XXX HORA(S) E YYY MINUTO(S)” .
+
+ 
+Exemplo de Entrada
+7 8 9 10
+
+7 7 7 7
+
+7 10 8 9
+
+Exemplo de Saída
+O JOGO DUROU 2 HORA(S) E 2 MINUTO(S)
+
+O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)
+
+O JOGO DUROU 0 HORA(S) E 59 MINUTO(S)
+*/
+
+using System; 
+
+class DesafiosAvancados3
+{
+    public static void Main()
+    {
+        int h_inicio, m_inicio, h_fim, m_fim, horas = 0, minutos = 0;
+        string[] s = Console.ReadLine().Split(' ');
+        h_inicio = int.Parse(s[0]);
+        m_inicio = int.Parse(s[1]);
+        h_fim = int.Parse(s[2]);
+        m_fim = int.Parse(s[3]);
+        horas = (h_fim - h_inicio) % 24;
+        minutos = (m_fim - m_inicio) % 60;
+        if (horas <= 0) horas += 24;
+        if (minutos < 0) {
+            minutos += 60;
+            horas--;
+        }
+        Console.WriteLine("O JOGO DUROU {0} HORA(S) E {1} MINUTO(S)", horas, minutos);
+        Console.ReadLine();
+    }
+}
